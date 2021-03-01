@@ -1,12 +1,3 @@
-'''
-Author: Sihong He
-Date: 2021-02-28 23:34:14
-LastEditTime: 2021-03-01 00:34:44
-LastEditors: Please set LastEditors
-Description: In User Settings Edit
-FilePath: /multiagent-particle-envs/multiagent/scenarios/simple_ref2.py
-'''
-
 import numpy as np
 from multiagent.core import World, Agent, Landmark
 from multiagent.scenario import BaseScenario
@@ -16,6 +7,7 @@ class Scenario(BaseScenario):
         world = World()
         # set any world properties first
         world.dim_c = 10
+        world.collaborative = True  # whether agents share rewards
         # add agents
         world.agents = [Agent() for i in range(2)]
         for i, agent in enumerate(world.agents):
@@ -63,12 +55,8 @@ class Scenario(BaseScenario):
     def reward(self, agent, world):
         if agent.goal_a is None or agent.goal_b is None:
             return 0.0
-        r = 0
-        for a in world.agents:
-            if a.goal_a is not None and a.goal_b is not None:
-                r = r - np.sum(np.square(a.goal_a.state.p_pos - a.goal_b.state.p_pos))
         dist2 = np.sum(np.square(agent.goal_a.state.p_pos - agent.goal_b.state.p_pos))
-        return r-dist2
+        return -dist2
 
     def observation(self, agent, world):
         # goal color
