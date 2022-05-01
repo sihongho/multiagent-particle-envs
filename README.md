@@ -3,6 +3,10 @@ Coop s1 - "simple_reference", (No Formal Name), SameR Coop
 
 Coop s2 - "simple_speaker_listener", (Cooperative communication), SameR Coop
 
+distance 
+
+smaller
+
 Coop s3 - "simple_spread", (Cooperative navigation), SameR Coop
 
 (rew, collisions, min_dists, occupied_landmarks)
