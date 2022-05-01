@@ -1,3 +1,25 @@
+Coop s1 - "simple_reference", (No Formal Name), SameR Coop
+
+
+Coop s2 - "simple_speaker_listener", (Cooperative communication), SameR Coop
+
+Coop s3 - "simple_spread", (Cooperative navigation), SameR Coop
+(rew, collisions, min_dists, occupied_landmarks)
+(larger, smaller, smaller, larger)
+
+Comp s4 - "simple_adversary", (Physical deception), Non-zerosum Comp
+
+Comp s5 - "simple_crypto", (Covert communication), Zerosum Comp
+(agent.state.c, agent.goal_a.color)
+
+Comp s6 - "simple_push", (Keep-away), Non-zerosum Comp
+
+Comp s7 - "simple_tag", (Predator-prey), Non-zerosum Comp
+collisions
+
+Coop&Comp s8 - "simple_world_comm" (No Formal Name), Non-zerosum Comp, SameR Coop, DiifR Coop
+collisions
+
 **Status:** Archive (code is provided as-is, no updates expected)
 
 # Multi-Agent Particle Environment
