@@ -59,6 +59,9 @@ class Scenario(BaseScenario):
         # Agents are rewarded based on minimum agent distance to each landmark
         return self.adversary_reward(agent, world) if agent.adversary else self.agent_reward(agent, world)
 
+    def benchmark_data(self, agent, world):
+        return self.reward(agent, world)
+
     def agent_reward(self, agent, world):
         # the distance to the goal
         return -np.sqrt(np.sum(np.square(agent.state.p_pos - agent.goal_a.state.p_pos)))

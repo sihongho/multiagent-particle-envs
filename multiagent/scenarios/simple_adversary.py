@@ -56,14 +56,15 @@ class Scenario(BaseScenario):
 
     def benchmark_data(self, agent, world):
         # returns data for benchmarking purposes
+        rew = self.reward(agent, world)
         if agent.adversary:
-            return np.sum(np.square(agent.state.p_pos - agent.goal_a.state.p_pos))
+            return (rew, np.sum(np.square(agent.state.p_pos - agent.goal_a.state.p_pos)) )
         else:
             dists = []
             for l in world.landmarks:
                 dists.append(np.sum(np.square(agent.state.p_pos - l.state.p_pos)))
             dists.append(np.sum(np.square(agent.state.p_pos - agent.goal_a.state.p_pos)))
-            return tuple(dists)
+            return (rew, tuple(dists))
 
     # return all agents that are not adversaries
     def good_agents(self, world):

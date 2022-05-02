@@ -56,14 +56,15 @@ class Scenario(BaseScenario):
 
     def benchmark_data(self, agent, world):
         # returns data for benchmarking purposes
+        rew = self.reward(agent, world)
         if agent.adversary:
             collisions = 0
             for a in self.good_agents(world):
                 if self.is_collision(a, agent):
                     collisions += 1
-            return collisions
+            return (rew, collisions)
         else:
-            return 0
+            return (rew, 0)
 
 
     def is_collision(self, agent1, agent2):

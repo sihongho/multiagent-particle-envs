@@ -77,7 +77,7 @@ class Scenario(BaseScenario):
 
     def benchmark_data(self, agent, world):
         # returns data for benchmarking purposes
-        return (agent.state.c, agent.goal_a.color)
+        return (self.reward(agent, world), agent.state.c, agent.goal_a.color)
 
     # return all agents that are not adversaries
     def good_listeners(self, world):
