@@ -1,5 +1,6 @@
 Coop s1 - "simple_reference", (No Formal Name), SameR Coop
 
+(reward1, reward2)
 
 Coop s2 - "simple_speaker_listener", (Cooperative communication), SameR Coop
 
