@@ -60,6 +60,9 @@ class Scenario(BaseScenario):
             landmark.state.p_pos = np.random.uniform(-1,+1, world.dim_p)
             landmark.state.p_vel = np.zeros(world.dim_p)
 
+    def benchmark_data(self, agent, world):
+        return self.reward(agent, world)
+        
     def reward(self, agent, world):
         if agent.goal_a is None or agent.goal_b is None:
             return 0.0
