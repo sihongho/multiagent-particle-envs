@@ -33,7 +33,7 @@ class Scenario(BaseScenario):
     def reset_world(self, world):
         # random properties for landmarks
         for i, landmark in enumerate(world.landmarks):
-            landmark.color = np.array([0.1]*len(landmarks))
+            landmark.color = np.array([0.1]*len(world.landmarks))
             landmark.color[i + 1] += 0.8
             landmark.index = i
         # set goal landmark
