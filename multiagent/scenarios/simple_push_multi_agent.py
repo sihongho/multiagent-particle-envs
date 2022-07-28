@@ -40,9 +40,9 @@ class Scenario(BaseScenario):
         goal = np.random.choice(world.landmarks)
         for i, agent in enumerate(world.agents):
             agent.goal_a = goal
-            agent.color = np.array([0.25, 0.25, 0.25])
+            agent.color = np.array([0.25]*(1+len(world.agents)))
             if agent.adversary:
-                agent.color = np.array([0.75, 0.25, 0.25])
+                agent.color = np.array([0.75]*(1+len(world.agents)))
             else:
                 j = goal.index
                 agent.color[j + 1] += 0.5
