@@ -34,7 +34,7 @@ class Scenario(BaseScenario):
         # random properties for landmarks
         for i, landmark in enumerate(world.landmarks):
             landmark.color = np.array([0.1]*(1+len(world.landmarks)))
-            landmark.color[i] += 0.8
+            landmark.color[i + 1] += 0.8
             landmark.index = i
         # set goal landmark
         goal = np.random.choice(world.landmarks)
